@@ -3,1136 +3,535 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serkan Kişin — Üsküdar Üniversitesi Öğrenci İşleri</title>
-  <meta name="description" content="Serkan Kişin — Üsküdar Üniversitesi Öğrenci İşleri Daire Başkanı. YKS, Yatay Geçiş ve Öğrenci Kayıt süreçleri için veri araçları ve yazılım geliştirici.">
+  <title>Serkan Kişin — Öğrenci İşleri Daire Başkanı · Üsküdar Üniversitesi</title>
+  <meta name="description" content="Serkan Kişin — Üsküdar Üniversitesi Öğrenci İşleri Daire Başkanı. 17 yıllık sağlık ve yükseköğretim deneyimi; YKS, yatay geçiş ve kayıt süreçleri için yapay zekâ destekli veri araçları.">
   <meta name="author" content="Serkan Kişin">
-  <meta name="keywords" content="Serkan Kişin, Üsküdar Üniversitesi, Öğrenci İşleri, YKS, Yatay Geçiş, Kontenjan Analizi">
-  <meta property="og:title" content="Serkan Kişin — Üsküdar Üniversitesi">
-  <meta property="og:description" content="YKS, Yatay Geçiş ve Öğrenci Kayıt süreçleri için veri araçları ve yazılımlar.">
-  <meta property="og:type" content="website">
+  <meta name="keywords" content="Serkan Kişin, Üsküdar Üniversitesi, Öğrenci İşleri Daire Başkanı, YKS, Yatay Geçiş, Kontenjan Analizi, GANO, Yapay Zekâ">
+  <meta property="og:title" content="Serkan Kişin — Öğrenci İşleri Daire Başkanı, Üsküdar Üniversitesi">
+  <meta property="og:description" content="17 yıllık deneyim · Yükseköğretim süreçleri için yapay zekâ destekli veri araçları.">
+  <meta property="og:type" content="profile">
   <meta property="og:url" content="https://serkankisin.github.io">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+  <meta property="og:image" content="https://serkankisin.github.io/uskudar-logo.gif">
+  <meta name="theme-color" content="#017b78">
+  <link rel="icon" href="uskudar-logo.gif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <style>
+    /* Üsküdar Üniversitesi kurumsal renkleri (logodan ölçüldü):
+       turkuaz #00B2AD · koyu turkuaz #017B78 · antrasit #231F20 · beyaz */
     :root {
-      --bg-primary: #0a0e17;
-      --bg-secondary: #111827;
-      --bg-card: #1a2236;
-      --bg-card-hover: #1f2a42;
-      --text-primary: #f0f4fc;
-      --text-secondary: #94a3c4;
-      --text-muted: #5f6f8f;
-      --accent-teal: #00d4c8;
-      --accent-teal-dim: rgba(0,212,200,0.12);
-      --accent-gold: #f4a43c;
-      --accent-gold-dim: rgba(244,164,60,0.12);
-      --accent-violet: #8b5cf6;
-      --accent-violet-dim: rgba(139,92,246,0.12);
-      --accent-rose: #f472b6;
-      --border: rgba(255,255,255,0.06);
-      --border-hover: rgba(255,255,255,0.12);
-      --glass: rgba(26,34,54,0.7);
-      --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
-      --shadow-md: 0 8px 32px rgba(0,0,0,0.3);
-      --shadow-glow-teal: 0 0 40px rgba(0,212,200,0.15);
+      --teal: #00b2ad;
+      --teal-dark: #017b78;
+      --teal-deep: #015e5b;
+      --teal-50: #effaf9;
+      --teal-100: #d5f1ef;
+      --teal-200: #a9e3df;
+      --ink: #231f20;
+      --ink-2: #4a4546;
+      --ink-3: #6f6a6b;
+      --line: #e3ecec;
+      --paper: #ffffff;
+      --paper-2: #f6fafa;
       --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 2px rgba(35,31,32,.06), 0 1px 1px rgba(35,31,32,.04);
+      --shadow-md: 0 10px 30px -12px rgba(1,94,91,.25);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
-    }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-
-    /* ─── Animated Background ─── */
-    .bg-mesh {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .bg-mesh::before {
-      content: '';
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0,212,200,0.08) 0%, transparent 70%);
-      top: -200px;
-      right: -200px;
-      animation: float1 18s ease-in-out infinite;
-    }
-    .bg-mesh::after {
-      content: '';
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%);
-      bottom: -100px;
-      left: -150px;
-      animation: float2 22s ease-in-out infinite;
-    }
-    @keyframes float1 {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(-60px, 80px); }
-    }
-    @keyframes float2 {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(50px, -60px); }
-    }
+    a { color: inherit; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    section { position: relative; }
 
     /* ─── Navigation ─── */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      backdrop-filter: blur(20px) saturate(1.8);
-      -webkit-backdrop-filter: blur(20px) saturate(1.8);
-      background: rgba(10,14,23,0.75);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.3s;
+      position: fixed; inset: 0 0 auto 0; z-index: 100;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(14px) saturate(1.6);
+      -webkit-backdrop-filter: blur(14px) saturate(1.6);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s, box-shadow .25s;
     }
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      height: 64px;
-    }
-    .nav-logo {
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text-primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .nav-logo .logo-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent-teal), var(--accent-violet));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent-teal); }
+    nav.scrolled { border-color: var(--line); box-shadow: var(--shadow-sm); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 17px; }
+    .brand small { display: block; font-size: 11.5px; font-weight: 500; color: var(--ink-3); line-height: 1.2; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--ink-2); transition: color .2s; }
+    .nav-links a:hover { color: var(--teal-dark); }
 
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 18px;
-      background: var(--accent-teal);
-      color: var(--bg-primary);
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: var(--radius-sm);
+      font: 600 15px/1 'Inter', sans-serif; text-decoration: none; cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: transform .15s, box-shadow .2s, background .2s, border-color .2s;
     }
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(0,212,200,0.3);
-    }
+    .btn:focus-visible { outline: 3px solid var(--teal-200); outline-offset: 2px; }
+    /* Tek belirgin eylem: koyu turkuaz dolgu (beyaz metinle yeterli kontrast) */
+    .btn-primary { background: var(--teal-dark); color: #fff; box-shadow: 0 6px 18px -8px rgba(1,123,120,.7); }
+    .btn-primary:hover { background: var(--teal-deep); transform: translateY(-1px); }
+    .btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal-dark); }
+    .btn-sm { padding: 8px 14px; font-size: 13px; }
 
-    /* ─── Sections ─── */
-    section {
-      position: relative;
-      z-index: 1;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    /* Üsküdar logosu rozeti */
+    .uni-mark { display: inline-flex; background: #fff; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 1px var(--line); }
+    .uni-mark img { display: block; width: 100%; height: 100%; border-radius: 50%; }
+    .uni-mark.xs { width: 22px; height: 22px; }
+    .uni-mark.sm { width: 36px; height: 36px; }
+    .uni-mark.md { width: 56px; height: 56px; }
+    .uni-mark.lg { width: 96px; height: 96px; }
 
     /* ─── Hero ─── */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 100px 0 80px;
+      padding: 128px 0 72px;
+      background:
+        radial-gradient(900px 420px at 85% -10%, var(--teal-100), transparent 70%),
+        linear-gradient(var(--paper-2), var(--paper));
+      border-bottom: 1px solid var(--line);
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 5px 12px 5px 5px; border-radius: 100px;
+      background: #fff; border: 1px solid var(--teal-200);
+      font-size: 13px; font-weight: 600; color: var(--teal-dark); margin-bottom: 22px;
     }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px 6px 8px;
-      background: var(--accent-teal-dim);
-      border: 1px solid rgba(0,212,200,0.2);
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent-teal);
-      margin-bottom: 24px;
-      animation: fadeInUp 0.6s ease-out;
-    }
-    .hero-badge .pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-teal);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(0,212,200,0.5); }
-      50% { box-shadow: 0 0 0 6px rgba(0,212,200,0); }
-    }
+    .hero h1 { font-size: clamp(38px, 5.2vw, 58px); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 10px; }
+    .hero .role { font-size: clamp(18px, 2.2vw, 22px); font-weight: 600; color: var(--teal-dark); margin-bottom: 18px; }
+    .hero .pitch { font-size: 17px; color: var(--ink-2); max-width: 540px; margin-bottom: 30px; }
+    .hero .pitch strong { color: var(--ink); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-    .hero h1 {
-      font-size: clamp(36px, 5vw, 56px);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      animation: fadeInUp 0.6s ease-out 0.1s both;
-    }
-    .hero h1 .gradient-text {
-      background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-violet) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-desc {
-      font-size: 17px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      max-width: 500px;
-      margin-bottom: 36px;
-      animation: fadeInUp 0.6s ease-out 0.2s both;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      animation: fadeInUp 0.6s ease-out 0.3s both;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      background: linear-gradient(135deg, var(--accent-teal), #00b8ad);
-      color: var(--bg-primary);
-      border: none;
-      border-radius: var(--radius-sm);
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-glow-teal);
-    }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      background: transparent;
-      color: var(--text-primary);
-      border: 1px solid var(--border-hover);
-      border-radius: var(--radius-sm);
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .btn-secondary:hover {
-      border-color: var(--accent-teal);
-      background: var(--accent-teal-dim);
-    }
+    /* Somut rakamlar */
+    .proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 44px; }
+    .proof div { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 14px 16px; }
+    .proof b { display: block; font-size: 28px; font-weight: 800; letter-spacing: -.02em; color: var(--teal-dark); line-height: 1.1; }
+    .proof span { font-size: 12.5px; color: var(--ink-3); line-height: 1.35; display: block; margin-top: 4px; }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Kimlik kartı */
+    .id-card {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md); overflow: hidden;
     }
+    .id-card .band { height: 8px; background: linear-gradient(90deg, var(--teal), var(--teal-dark)); }
+    .id-card .body { padding: 26px; }
+    .id-head { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+    .id-head h2 { font-size: 20px; font-weight: 700; line-height: 1.2; }
+    .id-head p { font-size: 13.5px; color: var(--ink-3); }
+    .id-rows { list-style: none; display: grid; gap: 12px; }
+    .id-rows li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; font-size: 14px; }
+    .id-rows .ic { font-size: 16px; line-height: 1.4; text-align: center; }
+    .id-rows .k { font-size: 11.5px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; display: block; }
+    .id-rows .v { font-weight: 600; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+    .tag { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; background: var(--teal-50); color: var(--teal-dark); border: 1px solid var(--teal-100); }
 
-    /* Hero Visual */
-    .hero-visual {
-      position: relative;
-      animation: fadeInUp 0.8s ease-out 0.4s both;
-    }
-    .hero-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent-teal), var(--accent-violet), var(--accent-gold));
-    }
-    .hero-card-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    .hero-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--accent-teal), var(--accent-violet));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-    }
-    .hero-card-name {
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .hero-card-title {
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
+    /* ─── Section heads ─── */
+    .sec { padding: 88px 0; }
+    .sec.alt { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .sec-head { max-width: 680px; margin-bottom: 44px; }
+    .sec-head.center { text-align: center; margin-left: auto; margin-right: auto; }
+    .kicker { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .sec-head h2 { font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -.015em; line-height: 1.15; margin-bottom: 12px; }
+    .sec-head p { font-size: 16px; color: var(--ink-2); }
 
-    .stat-mini-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 24px;
+    /* ─── Profil ─── */
+    .profile-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: start; }
+    .profile-text p { font-size: 16px; color: var(--ink-2); margin-bottom: 16px; }
+    .profile-text p strong { color: var(--ink); }
+    .quote {
+      border-left: 4px solid var(--teal); background: var(--teal-50);
+      padding: 18px 20px; border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 17px; font-weight: 600; color: var(--teal-deep); line-height: 1.5; margin-top: 8px;
     }
-    .stat-mini {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-      text-align: center;
-    }
-    .stat-mini .value {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--accent-teal);
-    }
-    .stat-mini .label {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 4px;
-    }
+    .highlights { list-style: none; display: grid; gap: 12px; }
+    .highlights li { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 16px; }
+    .highlights .ic { width: 38px; height: 38px; border-radius: 10px; background: var(--teal-50); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .highlights h4 { font-size: 15px; font-weight: 700; }
+    .highlights p { font-size: 13.5px; color: var(--ink-3); }
 
-    .card-tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    /* ─── Deneyim ─── */
+    .timeline { list-style: none; position: relative; max-width: 820px; }
+    .timeline::before { content: ''; position: absolute; left: 11px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(var(--teal), var(--line)); }
+    .timeline > li { position: relative; padding: 0 0 28px 44px; }
+    .timeline > li:last-child { padding-bottom: 0; }
+    .timeline > li::before {
+      content: ''; position: absolute; left: 4px; top: 22px; width: 16px; height: 16px; border-radius: 50%;
+      background: #fff; border: 3px solid var(--teal-200);
     }
-    .card-tag {
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 500;
-      border-radius: 100px;
-      border: 1px solid;
-    }
-    .card-tag.teal { color: var(--accent-teal); border-color: rgba(0,212,200,0.25); background: var(--accent-teal-dim); }
-    .card-tag.violet { color: var(--accent-violet); border-color: rgba(139,92,246,0.25); background: var(--accent-violet-dim); }
-    .card-tag.gold { color: var(--accent-gold); border-color: rgba(244,164,60,0.25); background: var(--accent-gold-dim); }
+    .timeline > li.current::before { border-color: var(--teal); background: var(--teal); box-shadow: 0 0 0 5px var(--teal-100); }
+    .job { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px 20px; }
+    .timeline > li.current .job { border-color: var(--teal-200); box-shadow: var(--shadow-md); }
+    .job-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+    .job .org { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; }
+    .period { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 500; color: var(--ink-3); background: var(--paper-2); border: 1px solid var(--line); padding: 3px 9px; border-radius: 6px; }
+    .current .period { color: var(--teal-dark); background: var(--teal-50); border-color: var(--teal-100); }
+    .job .title { font-size: 15px; font-weight: 600; color: var(--teal-dark); margin-top: 4px; }
+    .job ul { margin: 10px 0 0 18px; color: var(--ink-2); font-size: 14.5px; }
+    .job ul li { margin-bottom: 4px; }
+    .dur { font-size: 12.5px; color: var(--ink-3); margin-top: 4px; }
 
-    /* Floating badges */
-    .float-badge {
-      position: absolute;
-      background: var(--glass);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      font-size: 13px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: var(--shadow-md);
-      animation: floatBadge 4s ease-in-out infinite;
-    }
-    .float-badge.top-right {
-      top: -20px;
-      right: -20px;
-      animation-delay: 0s;
-    }
-    .float-badge.bottom-left {
-      bottom: -16px;
-      left: -16px;
-      animation-delay: 2s;
-    }
-    @keyframes floatBadge {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+    /* ─── Eğitim ─── */
+    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .edu { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 22px; transition: border-color .2s, transform .2s; }
+    .edu:hover { border-color: var(--teal-200); transform: translateY(-2px); }
+    .edu .ic { font-size: 26px; margin-bottom: 12px; }
+    .edu h4 { font-size: 17px; font-weight: 700; line-height: 1.3; }
+    .edu p { font-size: 14px; color: var(--ink-3); margin-top: 4px; }
 
-    /* ─── Section Title ─── */
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .section-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 14px;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border-radius: 100px;
-      margin-bottom: 16px;
-    }
-    .section-tag.teal { color: var(--accent-teal); background: var(--accent-teal-dim); }
-    .section-tag.gold { color: var(--accent-gold); background: var(--accent-gold-dim); }
-    .section-tag.violet { color: var(--accent-violet); background: var(--accent-violet-dim); }
+    /* ─── Yetkinlikler ─── */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skill { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 22px; }
+    .skill .ic { font-size: 24px; margin-bottom: 10px; }
+    .skill h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .skill p { font-size: 13.5px; color: var(--ink-3); }
 
-    .section-title h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 700;
-      margin-bottom: 12px;
+    /* ─── Projeler ─── */
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .project {
+      display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line);
+      border-radius: var(--radius-lg); padding: 26px; text-decoration: none; color: inherit;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
     }
-    .section-title p {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    a.project:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .project .status { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; margin-bottom: 14px; }
+    .status.live { color: var(--teal-dark); background: var(--teal-50); border: 1px solid var(--teal-100); }
+    .status.live::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px var(--teal-100); }
+    .status.soon { color: var(--ink-3); background: var(--paper-2); border: 1px solid var(--line); }
+    .project h3 { font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+    .project p { font-size: 14.5px; color: var(--ink-2); flex: 1; }
+    .project .tech { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .project .tech span { font-size: 12px; font-weight: 500; padding: 3px 9px; border-radius: 6px; background: var(--paper-2); color: var(--ink-2); border: 1px solid var(--line); }
+    .project .go { margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--teal-dark); }
+    .project.muted { opacity: .75; }
 
-    /* ─── About ─── */
-    .about { padding: 100px 0; }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+    /* ─── İletişim / kapanış ─── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal-deep));
+      color: #fff; border-radius: var(--radius-lg); padding: 44px;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center;
     }
-    .about-content h3 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .about-content p {
-      color: var(--text-secondary);
-      font-size: 15px;
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
-    .feature-list {
-      list-style: none;
-      margin-top: 24px;
-    }
-    .feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 15px;
-    }
-    .feature-list li:last-child { border-bottom: none; }
-    .feature-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .feature-icon.teal { background: var(--accent-teal-dim); }
-    .feature-icon.gold { background: var(--accent-gold-dim); }
-    .feature-icon.violet { background: var(--accent-violet-dim); }
+    .cta-band h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 800; line-height: 1.2; }
+    .cta-band p { color: rgba(255,255,255,.85); margin-top: 6px; }
+    .cta-band .btn-primary { background: #fff; color: var(--teal-deep); box-shadow: none; }
+    .cta-band .btn-primary:hover { background: var(--teal-50); }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; }
+    .contact-links a { color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; opacity: .9; border-bottom: 1px solid rgba(255,255,255,.35); }
+    .contact-links a:hover { opacity: 1; border-color: #fff; }
 
-    /* About Visual */
-    .about-visual {
-      position: relative;
-    }
-    .about-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-    }
-    .about-card-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .about-card-row:last-child { border-bottom: none; }
-    .about-card-row .emoji { font-size: 28px; }
-    .about-card-row .info h4 { font-size: 14px; font-weight: 600; }
-    .about-card-row .info p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+    footer { padding: 32px 0 40px; text-align: center; font-size: 13px; color: var(--ink-3); }
+    footer a { color: var(--teal-dark); text-decoration: none; }
 
-    /* ─── Projects ─── */
-    .projects { padding: 100px 0; }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-      text-decoration: none;
-      color: inherit;
-    }
-    .project-card:hover {
-      border-color: var(--accent-teal);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow-teal);
-    }
-    .project-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      border-radius: 100px;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-    }
-    .project-badge.live { color: #34d399; background: rgba(52,211,153,0.12); }
-    .project-badge.wip { color: var(--accent-gold); background: var(--accent-gold-dim); }
-
-    .project-card h3 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .project-card p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .project-tech span {
-      padding: 4px 10px;
-      font-size: 12px;
-      font-weight: 500;
-      border-radius: 6px;
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-    }
-    .project-arrow {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--bg-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: var(--text-secondary);
-      transition: background 0.3s, color 0.3s;
-      flex-shrink: 0;
-    }
-    .project-card:hover .project-arrow {
-      background: var(--accent-teal);
-      color: var(--bg-primary);
-    }
-
-    /* ─── Skills ─── */
-    .skills { padding: 100px 0; }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-    .skill-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      text-align: center;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .skill-card:hover {
-      border-color: var(--accent-teal);
-      transform: translateY(-4px);
-    }
-    .skill-icon {
-      font-size: 36px;
-      margin-bottom: 16px;
-    }
-    .skill-card h4 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .skill-card p {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    /* ─── Contact ─── */
-    .contact { padding: 100px 0; }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-    }
-    .contact-info h3 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .contact-info p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-    }
-    .contact-links {
-      list-style: none;
-    }
-    .contact-links li {
-      margin-bottom: 16px;
-    }
-    .contact-links a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-primary);
-      text-decoration: none;
-      font-size: 15px;
-      transition: color 0.2s;
-    }
-    .contact-links a:hover { color: var(--accent-teal); }
-    .contact-links .icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-    }
-
-    .contact-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      text-align: center;
-    }
-    .contact-card .uni-logo {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, var(--accent-teal-dim), var(--accent-violet-dim));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-    }
-    .contact-card h4 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .contact-card p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-    }
-
-    /* ─── Footer ─── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-      text-align: center;
-    }
-    footer p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-    footer a {
-      color: var(--accent-teal);
-      text-decoration: none;
+    /* ─── Reveal ─── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease-out, transform .55s ease-out; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
     }
 
     /* ─── Responsive ─── */
-    @media (max-width: 900px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .hero {
-        min-height: auto;
-        padding: 120px 0 60px;
-      }
+    @media (max-width: 960px) {
+      .hero-grid, .profile-grid { grid-template-columns: 1fr; gap: 36px; }
+      .proof { grid-template-columns: repeat(2, 1fr); }
+      .edu-grid, .skills-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .cta-band { grid-template-columns: 1fr; text-align: left; padding: 32px; }
+      .cta-band .uni-mark { display: none; }
       .nav-links { display: none; }
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-      .project-arrow { display: none; }
-      .float-badge { display: none; }
+    }
+    @media (max-width: 560px) {
+      .edu-grid, .skills-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 104px; }
+      .brand small { display: none; }
     }
 
-    /* ─── Scroll Reveal ─── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ─── Mobile Nav Toggle ─── */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-size: 24px;
-      cursor: pointer;
-    }
-    @media (max-width: 900px) {
-      .nav-toggle { display: block; }
+    /* ─── Yazdır / PDF: tek sayfalık CV düzeni ─── */
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      nav, .hero-actions, .cta-band .btn, .project .go, .reveal-hint, footer .noprint { display: none !important; }
+      body { font-size: 11pt; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .hero { padding: 0 0 12px; background: none; border: none; }
+      .sec { padding: 14px 0; }
+      .sec.alt { background: none; border: none; }
+      .sec-head { margin-bottom: 10px; }
+      .sec-head h2 { font-size: 16pt; }
+      .sec-head p { display: none; }
+      .hero-grid, .profile-grid, .projects-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .proof { margin-top: 14px; }
+      .id-card, .job, .edu, .skill, .project, .highlights li { box-shadow: none !important; break-inside: avoid; }
+      a.project { transform: none !important; }
+      .cta-band { background: none; color: var(--ink); border: 1px solid var(--line); padding: 14px; }
+      .cta-band p, .contact-links a { color: var(--ink); }
+      .contact-links a::after { content: ' (' attr(href) ')'; font-size: 9pt; color: var(--ink-3); }
     }
   </style>
 </head>
 <body>
 
-<div class="bg-mesh"></div>
-
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <span class="logo-icon">🎓</span>
-      <span>Serkan Kişin</span>
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <span class="uni-mark sm"><img src="uskudar-logo.gif" alt=""></span>
+      <span>Serkan Kişin<small>Üsküdar Üniversitesi</small></span>
     </a>
     <ul class="nav-links">
-      <li><a href="#hakkimda">Hakkımda</a></li>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#deneyim">Deneyim</a></li>
+      <li><a href="#egitim">Eğitim</a></li>
       <li><a href="#projeler">Projeler</a></li>
-      <li><a href="#yetkinlikler">Yetkinlikler</a></li>
       <li><a href="#iletisim">İletişim</a></li>
     </ul>
-    <a href="https://github.com/serkankisin" class="nav-cta" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-      GitHub
-    </a>
+    <button type="button" class="btn btn-ghost btn-sm" onclick="window.print()">⤓ CV'yi PDF al</button>
   </div>
 </nav>
 
-<!-- ─── Hero ─── -->
-<section class="hero" id="anasayfa">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-badge">
-          <span class="pulse"></span>
-          Üsküdar Üniversitesi · Öğrenci İşleri
-        </div>
-        <h1>
-          Merhaba, ben<br>
-          <span class="gradient-text">Serkan Kişin</span>
-        </h1>
-        <p class="hero-desc">
-          Üsküdar Üniversitesi Öğrenci İşleri Daire Başkanı olarak YKS, yatay geçiş ve öğrenci kayıt süreçlerini daha verimli hale getiren <strong>veri araçları ve yazılımlar</strong> geliştiriyorum.
-        </p>
-        <div class="hero-actions">
-          <a href="#projeler" class="btn-primary">
-            Projelerimi Gör
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://github.com/serkankisin" class="btn-secondary" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            GitHub Profilim
-          </a>
-        </div>
+<!-- ─── Hero: ilk 5 saniyede kim, ne, neden ─── -->
+<header class="hero" id="anasayfa">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span class="uni-mark xs"><img src="uskudar-logo.gif" alt=""></span> Üsküdar Üniversitesi · Öğrenci İşleri Daire Başkanlığı</div>
+      <h1>Serkan Kişin</h1>
+      <div class="role">Öğrenci İşleri Daire Başkanı</div>
+      <p class="pitch">
+        Sağlık ve yükseköğretim sektörlerinde <strong>17 yıllık deneyimle</strong> öğrenci süreçlerini yönetiyor; YKS, yatay geçiş ve kayıt işlemlerini hızlandıran <strong>yapay zekâ destekli veri araçları</strong> geliştiriyorum.
+      </p>
+      <div class="hero-actions">
+        <a href="#deneyim" class="btn btn-primary">Özgeçmişimi İnceleyin →</a>
+        <a href="#projeler" class="btn btn-ghost">Geliştirdiğim Araçlar</a>
       </div>
-      <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <div class="hero-avatar">🎓</div>
-            <div>
-              <div class="hero-card-name">Serkan Kişin</div>
-              <div class="hero-card-title">Öğrenci İşleri Daire Başkanı</div>
-            </div>
-          </div>
-          <div class="stat-mini-grid">
-            <div class="stat-mini">
-              <div class="value">YKS</div>
-              <div class="label">Kontenjan Analizi</div>
-            </div>
-            <div class="stat-mini">
-              <div class="value">📊</div>
-              <div class="label">Veri Araçları</div>
-            </div>
-            <div class="stat-mini">
-              <div class="value">🔄</div>
-              <div class="label">Yatay Geçiş</div>
-            </div>
-            <div class="stat-mini">
-              <div class="value">📝</div>
-              <div class="label">Kayıt Yönetimi</div>
-            </div>
-          </div>
-          <div class="card-tag-row">
-            <span class="card-tag teal">ÖSYM Verileri</span>
-            <span class="card-tag violet">İstatistik</span>
-            <span class="card-tag gold">Otomasyon</span>
-          </div>
-        </div>
-        <div class="float-badge top-right">
-          <span>🏫</span> Üsküdar Üniversitesi
-        </div>
-        <div class="float-badge bottom-left">
-          <span>📍</span> İstanbul, Türkiye
-        </div>
+      <div class="proof">
+        <div><b>17+</b><span>yıl profesyonel deneyim</span></div>
+        <div><b>12</b><span>yıldır Üsküdar Üniversitesi'nde</span></div>
+        <div><b>3</b><span>farklı disiplinde eğitim</span></div>
+        <div><b>2</b><span>yayında dijital araç</span></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ─── About ─── -->
-<section class="about" id="hakkimda">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-content reveal">
-        <div class="section-tag teal">Hakkımda</div>
-        <h3>Eğitim Verilerini<br>Anlamlı Araçlara Dönüştürüyorum</h3>
-        <p>
-          Üsküdar Üniversitesi'nde Öğrenci İşleri Daire Başkanı olarak görev yapıyorum. Yükseköğretim süreçlerini dijitalleştiren, veriyi anlamlı bilgiye dönüştüren araçlar geliştirmek en büyük tutkum.
-        </p>
-        <p>
-          YKS kontenjan analizleri, yatay geçiş takip sistemleri ve kayıt süreçlerini optimize eden yazılımlar ile hem üniversitemize hem sektöre katkı sunmayı hedefliyorum.
-        </p>
-        <ul class="feature-list">
-          <li>
-            <span class="feature-icon teal">📊</span>
-            <div>
-              <strong>YKS Kontenjan Analizi</strong>
-              <div style="font-size:13px;color:var(--text-secondary);margin-top:2px;">ÖSYM verilerinden yerleştirme, kayıt ve boşalan kontenjan istatistikleri</div>
-            </div>
-          </li>
-          <li>
-            <span class="feature-icon gold">🔄</span>
-            <div>
-              <strong>Yatay Geçiş Araçları</strong>
-              <div style="font-size:13px;color:var(--text-secondary);margin-top:2px;">Kontenjan takibi, başvuru durumu ve analiz raporları</div>
-            </div>
-          </li>
-          <li>
-            <span class="feature-icon violet">📝</span>
-            <div>
-              <strong>Kayıt Süreç Yönetimi</strong>
-              <div style="font-size:13px;color:var(--text-secondary);margin-top:2px;">Dijital kayıt, belge takibi ve otomasyona dayalı çözümler</div>
-            </div>
-          </li>
+    <aside class="id-card" aria-label="Kimlik kartı">
+      <div class="band"></div>
+      <div class="body">
+        <div class="id-head">
+          <span class="uni-mark md"><img src="uskudar-logo.gif" alt="Üsküdar Üniversitesi logosu"></span>
+          <div>
+            <h2>Serkan Kişin</h2>
+            <p>Öğrenci İşleri Daire Başkanı</p>
+          </div>
+        </div>
+        <ul class="id-rows">
+          <li><span class="ic">🏛️</span><div><span class="k">Kurum</span><span class="v">Üsküdar Üniversitesi · 2014'ten bu yana</span></div></li>
+          <li><span class="ic">🎓</span><div><span class="k">Eğitim</span><span class="v">Turizm ve Otel İşletmeciliği · İşletme · Egzersiz ve Spor Bilimleri</span></div></li>
+          <li><span class="ic">📍</span><div><span class="k">Doğum</span><span class="v">12 Eylül 1988 · Bingöl</span></div></li>
+          <li><span class="ic">🏙️</span><div><span class="k">Konum</span><span class="v">İstanbul, Türkiye</span></div></li>
         </ul>
-      </div>
-      <div class="about-visual reveal">
-        <div class="about-card">
-          <div class="about-card-row">
-            <span class="emoji">🏫</span>
-            <div class="info">
-              <h4>Üsküdar Üniversitesi</h4>
-              <p>Öğrenci İşleri Daire Başkanı</p>
-            </div>
-          </div>
-          <div class="about-card-row">
-            <span class="emoji">📍</span>
-            <div class="info">
-              <h4>İstanbul, Türkiye</h4>
-              <p>Üsküdar Yerleşkesi</p>
-            </div>
-          </div>
-          <div class="about-card-row">
-            <span class="emoji">🎯</span>
-            <div class="info">
-              <h4>Misyon</h4>
-              <p>Eğitim süreçlerini veriyle güçlendirmek</p>
-            </div>
-          </div>
-          <div class="about-card-row">
-            <span class="emoji">💡</span>
-            <div class="info">
-              <h4>Vizyon</h4>
-              <p>Yükseköğretimde dijital dönüşüme öncülük</p>
-            </div>
-          </div>
+        <div class="tags">
+          <span class="tag">Yükseköğretim Yönetimi</span>
+          <span class="tag">Yapay Zekâ</span>
+          <span class="tag">ÖSYM Verileri</span>
+          <span class="tag">Süreç Otomasyonu</span>
         </div>
       </div>
+    </aside>
+  </div>
+</header>
+
+<!-- ─── Profil ─── -->
+<section class="sec" id="profil">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="kicker">Profil</div>
+      <h2>Sağlıktan yükseköğretime, süreçleri veriyle yöneten bir kariyer</h2>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-text reveal">
+        <p>
+          12 Eylül 1988'de Bingöl'de doğdum. <strong>2014 yılından bu yana Üsküdar Üniversitesi'nde</strong> görev yapıyorum; bugün Öğrenci İşleri Daire Başkanı olarak üniversitemizin yerleştirme, kayıt ve öğrenci işleri süreçlerinin yönetiminden sorumluyum.
+        </p>
+        <p>
+          Profesyonel kariyerime 2009 yılında <strong>Acıbadem Hastanesi</strong>'nde başladım. 2012–2014 yılları arasında <strong>Okan Üniversitesi</strong>'nde çalışarak yükseköğretim alanına adım attım. Sağlık ve eğitim sektörlerinde edindiğim deneyim, kurumsal süreçlere hem hizmet kalitesi hem de verimlilik açısından bakmamı sağladı.
+        </p>
+        <p>
+          Turizm ve otel işletmeciliği, işletme ile egzersiz ve spor bilimleri alanlarındaki eğitimim yönetime çok yönlü bir bakış kazandırdı. Son yıllarda <strong>yapay zekâ destekli birçok çalışma</strong> yürütüyor; öğrenci işleri süreçlerinde veri analizi, raporlama ve karar desteğini hızlandıran araçlar geliştiriyorum.
+        </p>
+        <div class="quote">“Doğru veriyi doğru anda karar vericiye ulaştırmak, öğrenciye sunulan hizmetin kalitesini doğrudan belirler.”</div>
+      </div>
+      <ul class="highlights reveal">
+        <li><span class="ic">🏛️</span><div><h4>Kurumsal Liderlik</h4><p>Öğrenci İşleri Daire Başkanlığı'nın yönetimi</p></div></li>
+        <li><span class="ic">🤖</span><div><h4>Yapay Zekâ Destekli Çalışmalar</h4><p>Veri analizi, raporlama ve süreç otomasyonu</p></div></li>
+        <li><span class="ic">📊</span><div><h4>Veriye Dayalı Karar</h4><p>ÖSYM ve kurum verilerinden kontenjan ve kayıt analizleri</p></div></li>
+        <li><span class="ic">🤝</span><div><h4>Hizmet Odaklılık</h4><p>Sağlık sektöründen gelen hasta/öğrenci deneyimi bakışı</p></div></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ─── Projects ─── -->
-<section class="projects" id="projeler">
+<!-- ─── Deneyim ─── -->
+<section class="sec alt" id="deneyim">
   <div class="container">
-    <div class="section-title reveal">
-      <div class="section-tag gold">Projeler</div>
-      <h2>Geliştirdiğim Araçlar</h2>
-      <p>Yükseköğretim süreçlerini kolaylaştıran, veri odaklı açık kaynak projeler.</p>
+    <div class="sec-head reveal">
+      <div class="kicker">Deneyim</div>
+      <h2>17 yıl, iki sektör, üç kurum</h2>
+      <p>En güncelden geriye doğru.</p>
     </div>
-    <div class="projects-grid">
-      <a href="https://serkankisin.github.io/yks-kontenjan-analiz" class="project-card reveal" target="_blank" rel="noopener" id="project-yks">
-        <div>
-          <div class="project-badge live">
-            <span style="width:6px;height:6px;border-radius:50%;background:#34d399;display:inline-block;"></span>
-            Canlı
+    <ol class="timeline">
+      <li class="current reveal">
+        <div class="job">
+          <div class="job-top">
+            <div class="org"><span class="uni-mark sm"><img src="uskudar-logo.gif" alt=""></span>Üsküdar Üniversitesi</div>
+            <span class="period">2014 – Günümüz</span>
           </div>
-          <h3>🎯 YKS Kontenjan ve Kayıt Analizi</h3>
-          <p>
-            İlk tercihte yerleşip kayıt olan öğrenci istatistikleri ve ek tercihe esas kalan kontenjanlar. Üniversite, program ve şehir bazında detaylı filtreleme. 2026 verileri ile başladı, her yıl güncellenecek.
-          </p>
-          <div class="project-tech">
-            <span>HTML/CSS/JS</span>
-            <span>Veri Analizi</span>
-            <span>ÖSYM Verileri</span>
-            <span>İnteraktif Filtre</span>
-          </div>
+          <div class="title">Öğrenci İşleri Daire Başkanı</div>
+          <div class="dur">12 yıl · İstanbul</div>
+          <ul>
+            <li>Yerleştirme, kayıt ve öğrenci işleri süreçlerinin yönetimi</li>
+            <li>YKS kontenjan ve kayıt analizleri; ek yerleştirme takibi</li>
+            <li>Süreçleri hızlandıran yapay zekâ destekli dijital araçların geliştirilmesi</li>
+          </ul>
         </div>
-        <div class="project-arrow">→</div>
-      </a>
+      </li>
+      <li class="reveal">
+        <div class="job">
+          <div class="job-top">
+            <div class="org">Okan Üniversitesi</div>
+            <span class="period">2012 – 2014</span>
+          </div>
+          <div class="dur">2 yıl · Yükseköğretim</div>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="job">
+          <div class="job-top">
+            <div class="org">Acıbadem Hastanesi</div>
+            <span class="period">2009 – 2012</span>
+          </div>
+          <div class="dur">3 yıl · Sağlık</div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
 
-      <div class="project-card reveal" id="project-yatay">
-        <div>
-          <div class="project-badge wip">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--accent-gold);display:inline-block;"></span>
-            Yakında
-          </div>
-          <h3>🔄 Yatay Geçiş Kontenjan Takibi</h3>
-          <p>
-            Üniversiteler arası yatay geçiş kontenjanlarını takip eden, başvuru koşullarını karşılaştıran ve yıllar bazında trend analizi sunan bir araç.
-          </p>
-          <div class="project-tech">
-            <span>Python</span>
-            <span>Web Scraping</span>
-            <span>Dashboard</span>
-          </div>
-        </div>
-        <div class="project-arrow" style="opacity:0.4;">⏳</div>
-      </div>
-
-      <div class="project-card reveal" id="project-kayit">
-        <div>
-          <div class="project-badge wip">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--accent-gold);display:inline-block;"></span>
-            Yakında
-          </div>
-          <h3>📝 Öğrenci Kayıt Yönetim Aracı</h3>
-          <p>
-            Kayıt süreçlerini dijitalleştiren, belge takibi ve otomasyona dayalı bir yönetim platformu. Üniversite yöneticileri için tasarlandı.
-          </p>
-          <div class="project-tech">
-            <span>Full-Stack</span>
-            <span>Otomasyon</span>
-            <span>API</span>
-          </div>
-        </div>
-        <div class="project-arrow" style="opacity:0.4;">⏳</div>
-      </div>
+<!-- ─── Eğitim ─── -->
+<section class="sec" id="egitim">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="kicker">Eğitim</div>
+      <h2>Üç disiplin, tek bakış açısı: hizmet ve yönetim</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu reveal"><div class="ic">🏨</div><h4>Turizm ve Otel İşletmeciliği</h4><p>Ordu Üniversitesi</p></div>
+      <div class="edu reveal"><div class="ic">📈</div><h4>İşletme</h4><p>Anadolu Üniversitesi</p></div>
+      <div class="edu reveal"><div class="ic">🏃</div><h4>Egzersiz ve Spor Bilimleri</h4><p>Atatürk Üniversitesi</p></div>
     </div>
   </div>
 </section>
 
-<!-- ─── Skills ─── -->
-<section class="skills" id="yetkinlikler">
+<!-- ─── Yetkinlikler ─── -->
+<section class="sec alt" id="yetkinlikler">
   <div class="container">
-    <div class="section-title reveal">
-      <div class="section-tag violet">Yetkinlikler</div>
-      <h2>Uzmanlık Alanları</h2>
-      <p>Eğitim yönetimi ve yazılım geliştirme kesişiminde kapsamlı deneyim.</p>
+    <div class="sec-head reveal">
+      <div class="kicker">Yetkinlikler</div>
+      <h2>Yönetim ve teknolojinin kesişiminde</h2>
     </div>
     <div class="skills-grid">
-      <div class="skill-card reveal">
-        <div class="skill-icon">📊</div>
-        <h4>Veri Analizi</h4>
-        <p>ÖSYM, YÖK ve üniversite verilerinden anlamlı istatistikler çıkarma ve görselleştirme.</p>
+      <div class="skill reveal"><div class="ic">🎓</div><h4>Yükseköğretim Yönetimi</h4><p>YKS yerleştirme, yatay geçiş, kayıt ve öğrenci işleri süreçleri.</p></div>
+      <div class="skill reveal"><div class="ic">🤖</div><h4>Yapay Zekâ Uygulamaları</h4><p>Yapay zekâ araçlarıyla hızlı prototipleme, analiz ve içerik üretimi.</p></div>
+      <div class="skill reveal"><div class="ic">📊</div><h4>Veri Analizi</h4><p>ÖSYM, YÖK ve kurum verilerinden anlamlı istatistikler ve görselleştirmeler.</p></div>
+      <div class="skill reveal"><div class="ic">⚙️</div><h4>Süreç Optimizasyonu</h4><p>Kayıt, belge takibi ve idari süreçlerin dijitalleştirilmesi.</p></div>
+      <div class="skill reveal"><div class="ic">🌐</div><h4>Web Tabanlı Araçlar</h4><p>HTML, CSS ve JavaScript ile etkileşimli veri araçları.</p></div>
+      <div class="skill reveal"><div class="ic">📈</div><h4>Raporlama</h4><p>Doluluk oranları, yerleştirme eğilimleri ve karşılaştırmalı analizler.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Projeler ─── -->
+<section class="sec" id="projeler">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="kicker">Projeler</div>
+      <h2>Yayında olan araçlar</h2>
+      <p>Günlük iş yükünü azaltan, herkesin kullanabildiği veri odaklı çözümler.</p>
+    </div>
+    <div class="projects-grid">
+      <a href="https://serkankisin.github.io/yks-kontenjan-analiz" class="project reveal" target="_blank" rel="noopener">
+        <span class="status live">Canlı</span>
+        <h3>🎯 YKS Kontenjan ve Kayıt Analizi</h3>
+        <p>İlk yerleştirmede kayıt olan öğrenciler, ek tercihe kalan kontenjanlar ve ek yerleştirme sonuçları; üniversite, program ve şehir bazında filtreleme ile 2026 ücret bilgileri.</p>
+        <div class="tech"><span>ÖSYM Verileri</span><span>Veri Analizi</span><span>İnteraktif Filtre</span></div>
+        <span class="go">Aracı aç →</span>
+      </a>
+      <a href="https://v0-turkish-text-translation-omega.vercel.app/" class="project reveal" target="_blank" rel="noopener">
+        <span class="status live">Canlı</span>
+        <h3>🧮 Not Dönüşüm ve GANO Hesaplama Sistemi</h3>
+        <p>Farklı üniversitelerin not sistemlerindeki notları 4'lük sisteme dönüştüren ve kredi ağırlıklı genel not ortalamasını (GANO) hesaplayan, yazdırılabilir özet sunan araç.</p>
+        <div class="tech"><span>Yapay Zekâ Destekli</span><span>v0 · Vercel</span><span>GANO</span></div>
+        <span class="go">Aracı aç →</span>
+      </a>
+      <div class="project muted reveal">
+        <span class="status soon">Yakında</span>
+        <h3>🔄 Yatay Geçiş Kontenjan Takibi</h3>
+        <p>Üniversiteler arası yatay geçiş kontenjanlarını takip eden, başvuru koşullarını karşılaştıran ve yıllar bazında eğilim analizi sunan araç.</p>
+        <div class="tech"><span>Python</span><span>Dashboard</span></div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">🌐</div>
-        <h4>Web Geliştirme</h4>
-        <p>HTML, CSS, JavaScript ile interaktif veri araçları ve dashboard'lar oluşturma.</p>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">🎓</div>
-        <h4>Yükseköğretim Yönetimi</h4>
-        <p>YKS yerleştirme, yatay geçiş, kayıt ve öğrenci işleri süreçlerinde uzman deneyim.</p>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">🐍</div>
-        <h4>Python & Otomasyon</h4>
-        <p>Veri toplama, dönüştürme ve raporlama süreçlerini otomatikleştirme.</p>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">📋</div>
-        <h4>Süreç Optimizasyonu</h4>
-        <p>Kayıt, belge takibi ve idari süreçleri dijitalleştirme ve hızlandırma.</p>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">📈</div>
-        <h4>İstatistik & Raporlama</h4>
-        <p>Kontenjan doluluk oranları, yerleştirme trendleri ve karşılaştırmalı analizler.</p>
+      <div class="project muted reveal">
+        <span class="status soon">Yakında</span>
+        <h3>📝 Öğrenci Kayıt Yönetim Aracı</h3>
+        <p>Kayıt süreçlerini dijitalleştiren, belge takibi ve otomasyona dayalı bir yönetim platformu.</p>
+        <div class="tech"><span>Otomasyon</span><span>API</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── Contact ─── -->
-<section class="contact" id="iletisim">
+<!-- ─── İletişim: güçlü kapanış ─── -->
+<section class="sec" id="iletisim" style="padding-top:24px;">
   <div class="container">
-    <div class="section-title reveal">
-      <div class="section-tag teal">İletişim</div>
-      <h2>Bana Ulaşın</h2>
-      <p>Projeler, iş birliği veya sorular için her zaman ulaşabilirsiniz.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <h3>İletişim Bilgileri</h3>
-        <p>Eğitim teknolojileri, veri araçları veya yükseköğretim süreçleri hakkında konuşmak ister misiniz?</p>
-        <ul class="contact-links">
-          <li>
-            <a href="https://github.com/serkankisin" target="_blank" rel="noopener">
-              <span class="icon">
-                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              </span>
-              github.com/serkankisin
-            </a>
-          </li>
-          <li>
-            <a href="https://uskudar.edu.tr" target="_blank" rel="noopener">
-              <span class="icon">🏫</span>
-              Üsküdar Üniversitesi
-            </a>
-          </li>
-          <li>
-            <a href="https://serkankisin.github.io" target="_blank" rel="noopener">
-              <span class="icon">🌐</span>
-              serkankisin.github.io
-            </a>
-          </li>
-        </ul>
+    <div class="cta-band reveal">
+      <span class="uni-mark lg"><img src="uskudar-logo.gif" alt="Üsküdar Üniversitesi logosu"></span>
+      <div>
+        <h2>Yükseköğretim süreçleri üzerine konuşalım</h2>
+        <p>Veri araçları, iş birlikleri ve öğrenci işleri süreçleri için ulaşabilirsiniz.</p>
+        <div class="contact-links">
+          <a href="https://github.com/serkankisin" target="_blank" rel="noopener">github.com/serkankisin</a>
+          <a href="https://uskudar.edu.tr" target="_blank" rel="noopener">uskudar.edu.tr</a>
+          <a href="https://serkankisin.github.io" target="_blank" rel="noopener">serkankisin.github.io</a>
+        </div>
       </div>
-      <div class="contact-card reveal">
-        <div class="uni-logo">🎓</div>
-        <h4>Üsküdar Üniversitesi</h4>
-        <p>Öğrenci İşleri Daire Başkanlığı<br>İstanbul, Türkiye</p>
-        <a href="https://github.com/serkankisin" class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex;">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub Profilime Git
-        </a>
-      </div>
+      <a href="https://github.com/serkankisin" class="btn btn-primary" target="_blank" rel="noopener">GitHub Profilim →</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <p>© 2026 <a href="https://github.com/serkankisin">Serkan Kişin</a> · Üsküdar Üniversitesi Öğrenci İşleri Daire Başkanlığı</p>
-  </div>
+  <div class="container">© 2026 <a href="https://github.com/serkankisin">Serkan Kişin</a> · Üsküdar Üniversitesi Öğrenci İşleri Daire Başkanlığı</div>
 </footer>
 
 <script>
-// Scroll reveal animation
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, observerOptions);
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-// Nav background on scroll
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  if (window.scrollY > 50) {
-    nav.style.background = 'rgba(10,14,23,0.92)';
-  } else {
-    nav.style.background = 'rgba(10,14,23,0.75)';
-  }
-});
+// Yazdırırken tüm bölümler görünür olsun
+window.addEventListener('beforeprint', () => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')));
 </script>
-
 </body>
 </html>
