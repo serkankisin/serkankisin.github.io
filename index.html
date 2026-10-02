@@ -129,8 +129,14 @@
     .portrait img.photo {
       width: 100%; height: 100%; object-fit: cover; display: block;
       /* kenarlar siyaha erir: çerçevesiz, sahnedeymiş gibi */
-      -webkit-mask-image: radial-gradient(120% 95% at 62% 38%, #000 52%, transparent 80%);
-              mask-image: radial-gradient(120% 95% at 62% 38%, #000 52%, transparent 80%);
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, #000 22%, #000 80%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, #000 14%, #000 70%, transparent 100%);
+      -webkit-mask-composite: source-in;
+              mask-image:
+        linear-gradient(to right, transparent 0%, #000 22%, #000 80%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, #000 14%, #000 70%, transparent 100%);
+              mask-composite: intersect;
     }
     .portrait-badge {
       position: absolute; left: 4%; bottom: 10%;
